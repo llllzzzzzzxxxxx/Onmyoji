@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新闻列表</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        .news{
+            margin: 100px auto;
+            width: 300px;
+            height: 200px;
+            /* background-color: pink; */
+        }
+        .news .hd{
+            height: 34px;
+            background-color: #eee;
+            border: 1px solid #dbdee1;
+            border-left: 0;
+        }
+        .news .hd a {
+            line-height: 32px;
+            margin-top: -1px;
+            display: block;
+            border-top: 3px solid #ff8400;
+            border-right: 1px solid #dbdee1;
+            width: 48px;
+            height: 34px;
+            background-color: #fff;
+            font-size: 14px;
+            color: #333;
+            text-align: center;
+        }
+        .news .bd li a:hover {
+            color:#ff8400;
+        }
+    </style>
+</head>
+<body>
+    <div class="news">
+        <div class="hd"><a href="#">新闻</a></div>
+        <div class="bd">
+            <ul>
+                <li><a href="#">巴拉巴拉巴拉巴拉巴拉</a></li>
+                <li><a href="#">巴拉巴拉巴拉巴拉巴拉</a></li>
+                <li><a href="#">巴拉巴拉巴拉巴拉巴拉</a></li>
+                <li><a href="#">巴拉巴拉巴拉巴拉巴拉</a></li>
+                <li><a href="#">巴拉巴拉巴拉巴拉巴拉</a></li>
+                <li><a href="#">巴拉巴拉巴拉巴拉巴拉</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

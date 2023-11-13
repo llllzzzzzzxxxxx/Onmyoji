@@ -1,0 +1,97 @@
+/* 首页样式 */
+/* 版心 */
+.wrapper {
+    margin: 0 auto;
+    width: 1200px;
+}
+body {
+    background-color: #f3f5f7;
+}
+/* 头部区域 */
+.header {
+    height: 100px;
+    background-color:white;
+    /* margin-bottom: 14px; */
+}
+.header .wrapper {
+    padding-top: 29px;
+    display: flex;
+}
+.logo a {
+    display: block;
+    width: 177px;
+    height: 58px;
+    background-image: url(../image/logo1_d853983.webp);
+    /* font-size: 0; */
+}
+.nav {
+    margin-left: 102px;
+}
+.nav ul{
+    display: flex;
+
+}
+.nav li {
+    margin-right: 24px;
+}
+.nav li a {
+    display: block;
+    padding: 6px 8px;
+    line-height: 27px;
+    font-size: 19px;
+}
+.nav li .active, 
+.nav li:hover {
+    border-bottom: 2px solid #00a4ff;
+}
+/* 搜索 */
+.search {
+    display: flex;
+    margin-left: 64px;
+    width: 412px;
+    height: 40px;
+    background-color: #646a12;
+    border-radius: 20px;
+    padding-left: 19px;
+    padding-right: 12px;
+}
+
+.search input{
+    flex: 1;
+    border: 0;
+    background-color: transparent;
+    outline: none;
+}
+/* placeholder选中的就是placeholder属性 */
+.search input::placeholder {
+    font-size: 14px;
+    color: #999;
+}
+
+.search a {
+    align-self: center;
+    width: 14px;
+    height: 14px;
+    /* background-image: url(.); */
+    
+}
+.user {
+    margin-left: 4px;
+}
+.user img {
+    margin-right: 7px;
+    /* vertical-align行内块和行内垂直方向对齐方式 */
+    vertical-align: middle;
+}
+.user span {
+    font-size: 16px;
+    color: #666;
+}
+.top {
+    display: flex;
+    height: 60px;
+    background-image: url(../image/nav_back_bg_fd2505e.jpg);
+}
+.top .wrapper ul li{
+    display: flex;
+}
