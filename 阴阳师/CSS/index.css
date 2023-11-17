@@ -7,11 +7,11 @@
 body {
     background-color: #f3f5f7;
 }
-/* 头部区域 */
+/* 
 .header {
     height: 100px;
     background-color:white;
-    /* margin-bottom: 14px; */
+    
 }
 .header .wrapper {
     padding-top: 29px;
@@ -22,7 +22,7 @@ body {
     width: 177px;
     height: 58px;
     background-image: url(../image/logo1_d853983.webp);
-    /* font-size: 0; */
+   
 }
 .nav {
     margin-left: 102px;
@@ -44,7 +44,7 @@ body {
 .nav li:hover {
     border-bottom: 2px solid #00a4ff;
 }
-/* 搜索 */
+
 .search {
     display: flex;
     margin-left: 64px;
@@ -62,7 +62,7 @@ body {
     background-color: transparent;
     outline: none;
 }
-/* placeholder选中的就是placeholder属性 */
+
 .search input::placeholder {
     font-size: 14px;
     color: #999;
@@ -72,7 +72,7 @@ body {
     align-self: center;
     width: 14px;
     height: 14px;
-    /* background-image: url(.); */
+
     
 }
 .user {
@@ -80,18 +80,82 @@ body {
 }
 .user img {
     margin-right: 7px;
-    /* vertical-align行内块和行内垂直方向对齐方式 */
+
     vertical-align: middle;
 }
 .user span {
     font-size: 16px;
     color: #666;
+} */
+video {
+    position: fixed;
+    right: 0;
+    padding-top: 60px;
+    /* bottom: 0; */
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-filter: grayscale(20%);
 }
+
 .top {
     display: flex;
     height: 60px;
     background-image: url(../image/nav_back_bg_fd2505e.jpg);
 }
-.top .wrapper ul li{
+.top .wrapper ul {
     display: flex;
+    color: white;
+}
+.top .wrapper .active {
+    display: block;
+    height: 60px;
+    width: 100px;
+    color: white;
+}
+.top .wrapper .active span{
+    line-height: 60px;
+    margin-left: 20px;
+
+}
+.top .wrapper .active:hover {
+    color: black;
+    background: url(../image/nav_bg1_d44f09d.jpg);
+}
+.search a {
+    align-self: center;
+    width: 18px;
+    height: 19px;
+    line-height: 60px;
+    display: block;
+    background-image: url(../image/search_b180dd5.webp);
+    
+}
+.search {
+    display: flex;
+    margin: 10px;
+    width: 312px;
+    height: 40px;
+    /* background-color: #646a12; */
+    border-radius: 20px;
+    padding-left: 19px;
+    padding-right: 12px;
+    border-bottom: 1px solid #c2a060;
+}
+
+.search input{
+    flex: 1;
+    border: 0;
+    background-color: transparent;
+    outline: none;
+}
+
+.search input::placeholder {
+    font-size: 14px;
+    color: #999;
+}
+.banner .the_up{
+    background-image: url();
 }

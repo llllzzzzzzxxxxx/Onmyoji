@@ -88,19 +88,46 @@
     <div class="banner">
         <!-- 图 -->
         <ul>
-            <li><a href="#"><img src="./media/images/5b9906c723ec1109.png.webp" alt=""></a></li>
+            <!-- <li><a href="#"><img src="./media/images/5b9906c723ec1109.png.webp" alt=""></a></li>
             <li><a href="#"><img src="./media/images/水杯.jpg" alt=""></a></li>
-            <li><a href="#"><img src="./media/images/耳机.jpg" alt=""></a></li>
+            <li><a href="#"><img src="./media/images/耳机.jpg" alt=""></a></li> -->
+            <div class="slider-wrapper">
+                <img src="./media/images/5b9906c723ec1109.png.webp" alt="">
+            </div>
         </ul>
         <!-- 箭头 -->
-        <a href="#" class="prev"><</a>
-        <a href="#" class="next">></a>
+        <!-- <a href="#" class="prev"><</a> -->
+        <!-- <a href="#" class="next">></a> -->
+        <button class="prev"><</button>
+        <button class="next">></button>
         <!-- 圆点 -->
-        <ol>
+        <div class="slider-footer">
+        <ol class="slider-indicator">
             <li class="active"></li>
             <li></li>
             <li></li>
-        </ol>
+        </ol></div>
     </div>
+    <script>
+        const sliderData = [
+            { url: './media/images/5b9906c723ec1109.png.webp'},
+            { url: './media/images/水杯.jpg'},
+            { url: './media/images/耳机.jpg'},
+        ]
+        const img = document.querySelector('.slider-wrapper img')
+        const p = document.querySelector('.slider-footer p')
+        let i=0
+        setInterval(function() {
+            i++
+            // 无缝衔接位置
+            if(i>=sliderData.length){
+                i=0
+            }
+            img.src = sliderData[i].url
+            // p.innerHTML = sliderData[i].title
+            // document.querySelector(`.slider-indicator .active`).classList.remove('active')
+            document.querySelector(`.slider-indicator li:nth-child(${i+1})`).classList.add(`active`)
+        },1000)
+    </script>
 </body>
 </html>
