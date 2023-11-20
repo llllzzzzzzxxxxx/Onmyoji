@@ -101,7 +101,7 @@ body {
     font-style: normal;
     position: absolute;
     top: 20px;
-    margin-right: 5px
+    margin-right: 5px;
     text-align: center;
     
 }
@@ -206,18 +206,25 @@ body {
     margin-right: 606px;
 }
 .bd {
+    width: 1280px;
+    margin: 43px auto 0;
     display: flex;
     justify-content: space-between;
 }
 .bd .left{
-    margin-left: 439px;
+
+    /* margin-left: 108px;  */
     width: 228px;
     background-color: #fff;
 }
 .bd .right {
-    margin-right: 306px;
+    /* margin-right: 306px; */
+    left: 0;
     width: 957px;
     background-color: #fff;
+}
+.div .bottom{
+    display: flex;
 }
 .bd .right .top {
     margin-bottom: 15px;
@@ -233,17 +240,18 @@ body {
     line-height: 60px;
 }
 .hd h3 {
-    margin-left: 400px;
-    color: #c2a060;
-    width: 30px;
-    height: 160px;
-    font-size: 30px;
-    font-weight: 400;
-
+    margin-left: 250px;
+    background-color: #c2a060;
 }
 .hd .more {
     font-size: 14px;
     color: #999;
+}
+.bd h3{
+    width: 54px;
+    height: 145px;
+    background: url(../image/index_z_9ac8591.webp);
+    background-position: -900px -532px;
 }
 .bd ul {
     /* margin-right: 306px; */
@@ -282,4 +290,60 @@ body {
 }
 .bd li .text p i {
     font-style: normal;
+}
+/* 主体部分 */
+.container{
+    width: 1180px;
+    margin: 43px auto 0;
+    /* color: red; */
+}
+.world {
+    width: 100%;
+    height: 495px;
+    margin-bottom: 70px;
+    /* background-color: rgb(75, 63, 63); */
+}
+.world-title{
+    width: 54px;
+    height: 145px;
+    background: url(../image/index_z_9ac8591.webp);
+    background-position: -835px -532px;
+}
+.world-box{
+    position: relative;
+    width: 100%;
+    height: 320px;
+    background: url(../image/shishen_bg_000bc91.jpg) no-repeat center 0;
+    z-index: -11;
+    margin-top: 23px;
+}
+.world-img{
+    position: relative;
+    width: 940px;
+    height: 320px;
+    margin: 0 auto;
+}
+.world-img>a{
+    position: absolute;
+    top: 0;
+    width: 470px;
+    height: 320px;
+    /* background-color: red; */
+}
+.world-img>a:first-child{
+    left: 0;
+}
+.world-img>a:last-child{
+    right: 0;
+}
+.world-img>a:first-child>img{
+    position: relative;
+    top: -186px;
+    left: -140px;
+}
+.world-img>a:last-child>img{
+    position: absolute;
+    top: -186px;
+    right: -140px;
+    z-index: -10;
 }

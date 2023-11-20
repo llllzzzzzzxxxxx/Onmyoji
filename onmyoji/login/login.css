@@ -1,0 +1,83 @@
+video{
+    position: fixed;
+    left: 0;
+    top: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+}
+.login{
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    margin-left: -200px;
+    margin-top: -200px;
+    background-color: whitesmoke;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    padding: 5px 40px;
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+p{
+    font-size: 42px;
+    /* color: burlywood; */
+    font-weight: 600px;
+}
+input{
+    background-color: whitesmoke;
+    width: 100%;
+    height: 48px;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    border-bottom: 2px solid silver;
+}
+.btn{
+    background-color: #59c2c5;
+    width: 38%;
+    height: 48px;
+    border-radius: 8px;
+    margin-top: 40px;
+    font-size: 28px;
+    font-weight: 600;
+    color: white;
+}
+.btn:hover{
+    background-color: #c29559;
+}
+.logo{
+    position: absolute;
+    width: 77px;
+    height: 247px;
+    left: 150px;
+    top: 143px;
+    z-index: 10;
+}
+.logo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.login .back{
+    position: absolute;
+    right: 10%;
+    
+    
+}
+.login a{
+    text-decoration: none;
+    color: gray;
+}
+.register button{
+    display:flex;
+    position: absolute;
+    border: none;
+    left: 10%;
+    font-size: 16px;
+    color: grey;
+}

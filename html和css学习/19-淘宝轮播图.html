@@ -114,20 +114,56 @@
             { url: './media/images/水杯.jpg'},
             { url: './media/images/耳机.jpg'},
         ]
-        const img = document.querySelector('.slider-wrapper img')
-        const p = document.querySelector('.slider-footer p')
+        // const img = document.querySelector('.slider-wrapper img')
+        // const p = document.querySelector('.slider-footer p')
+        // let i=0
+        // setInterval(function() {
+        //     i++
+        //     // 无缝衔接位置
+        //     if(i>=sliderData.length){
+        //         i=0
+        //     }
+        //     img.src = sliderData[i].url
+        //     // p.innerHTML = sliderData[i].title
+        //     // document.querySelector(`.slider-indicator .active`).classList.remove('active')
+        //     document.querySelector(`.slider-indicator li:nth-child(${i+1})`).classList.add(`active`)
+        // },1000)
+        const img=document.querySelector('.slider-wrapper img')
+        const next=document.querySelector('.next')
         let i=0
-        setInterval(function() {
+        next.addEventListener('click',function(){
             i++
-            // 无缝衔接位置
-            if(i>=sliderData.length){
+            if(i>=3){
                 i=0
             }
-            img.src = sliderData[i].url
-            // p.innerHTML = sliderData[i].title
-            // document.querySelector(`.slider-indicator .active`).classList.remove('active')
-            document.querySelector(`.slider-indicator li:nth-child(${i+1})`).classList.add(`active`)
+            img.src=sliderData[i].url
+            document.querySelector('.slider-indicator .active').classList.remove('active')
+            document.querySelector(`.slider-indicator li:nth-child(${i + 1})`).classList.add('active')
+        })  
+        const prev=document.querySelector('.prev')
+        prev.addEventListener('click',function(){
+            i--
+            if(i<0){
+                i=2
+            }
+            img.src=sliderData[i].url
+            document.querySelector('.slider-indicator .active').classList.remove('active')
+            document.querySelector(`.slider-indicator li:nth-child(${i + 1})`).classList.add('active')
+        }) 
+        let timerId = setInterval(function(){
+            next.click()
         },1000)
+        const banner = document.querySelector('.banner')
+        banner.addEventListener('mouseenter',function(){
+            clearInterval(timerId)
+        })
+        banner.addEventListener('mouseleave',function(){
+
+            clearInterval(timerId)
+            timerId = setInterval(function () {
+            next.click()
+        },1000)
+        })
     </script>
 </body>
 </html>
