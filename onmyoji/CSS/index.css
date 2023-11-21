@@ -11,7 +11,7 @@ body {
     position: absolute;
     /* float: left; */
     /* z-index: auto; */
-    right: 0;
+    left: 0;
     /* padding-top: 60px; */
     /* bottom: 0; */
     min-width: 100%;
@@ -19,7 +19,7 @@ body {
     width: auto;
     height: auto;
     z-index: -100;
-    -webkit-filter: grayscale(20%);
+    /* -webkit-filter: grayscale(20%); */
     /* background: top center; */
 }
 
@@ -216,6 +216,10 @@ body {
     /* margin-left: 108px;  */
     width: 228px;
     background-color: #fff;
+    transition: all;
+}
+.bd .left img :hover{
+    transform: scale(1.1);
 }
 .bd .right {
     /* margin-right: 306px; */
@@ -267,6 +271,10 @@ body {
 }
 .bd li .pic{
     height: 156px;
+    transition: all 0.3s;
+}
+.bd li .pic:hover{
+    transform: scale(1.2);
 }
 .bd li .text {
     height: 115px;
@@ -347,3 +355,102 @@ body {
     right: -140px;
     z-index: -10;
 }
+/* 讨论区 */
+
+.talk{
+    float: left;
+    font-style:unset;
+    width: 30px;
+    font-size: 30px;
+    margin-left: 300px;
+}
+.wrapper-2 {
+    min-width: 400px;
+    max-width: 800px;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 auto;
+  }
+
+  .avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: url("../image/006KbEKFly1hhen5n3tyoj3050050dg1.jpg") no-repeat center / cover;
+    margin-right: 20px;
+  }
+
+  .wrapper-2 textarea {
+    outline: none;
+    border-color: transparent;
+    resize: none;
+    background: #f5f5f5;
+    border-radius: 4px;
+    flex: 1;
+    padding: 10px;
+    transition: all 0.5s;
+    height: 30px;
+  }
+
+  .wrapper-2 textarea:focus {
+    border-color: #e4e4e4;
+    background: #fff;
+    height: 50px;
+  }
+
+  .wrapper-2 button {
+    background: #00aeec;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    margin-left: 10px;
+    width: 70px;
+    cursor: pointer;
+  }
+
+  .wrapper-2 .total {
+    margin-right: 80px;
+    color: #999;
+    margin-top: 5px;
+    opacity: 0;
+    transition: all 0.5s;
+  }
+
+  .list {
+    margin: 0 auto;
+    min-width: 400px;
+    max-width: 800px;
+    display: flex;
+  }
+
+  .list .item {
+    width: 100%;
+    display: flex;
+  }
+
+  .list .item .info {
+    flex: 1;
+    border-bottom: 1px dashed #e4e4e4;
+    padding-bottom: 10px;
+  }
+
+  .list .item p {
+    margin: 0;
+  }
+
+  .list .item .name {
+    color: #FB7299;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .list .item .text {
+    color: #333;
+    padding: 10px 0;
+  }
+
+  .list .item .time {
+    color: #999;
+    font-size: 12px;
+  }
