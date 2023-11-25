@@ -13,16 +13,36 @@
     <video src="../image/a551d45027c5ab425d07c35ede467c81.mp4" autoplay loop muted></video>
     <form action="" class="login">
         <p>Login</p>
-        <input type="text" placeholder="用户名">
-        <input type="password" placeholder="密码">
-        <input type="submit" class="btn" value="登  录">
+        <input type="text" id="inp1" placeholder="账号">
+        <input type="password" id="inp2" placeholder="密码">
+        <button class="btn"><a href="../index.html">登录</a></button>
         <!-- <input type="submit" class="btn" value="登  录"> -->
         <div class="back"><a href="../index.html">返回</a></div>
         <div class="register"><button >注册</button></div>
     </form>
     <script>
-        // let username = document.querySelector('.login .text')
+        let btn = document.querySelector('button')
         
+        btn.addEventListener("click",function(){
+            let inp1 = document.getElementById('inp1').value
+            let inp2 = document.getElementById('inp2').value
+            console.log(inp1,inp2)
+            if(inp1.length<6||inp2.length<6){
+                alert("账号或密码长度少于6位")
+                return
+            }
+            localStorage.setItem("user",inp1)
+            localStorage.setItem("password",inp2)
+            
+        })
+        // 获取数据
+        let res1 = localStorage.getItem("user")
+        let res2 = localStorage.getItem("password")
+        console.log(res1,res2)
+        if(res1!==""&&res2 !==""){
+            document.getElementById('inp1').value = res1
+            document.getElementById('inp2').value = res2
+        }
     </script>
 </body>
 </html>

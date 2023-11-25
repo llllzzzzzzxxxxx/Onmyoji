@@ -40,6 +40,7 @@ input{
 .btn{
     background-color: #59c2c5;
     width: 38%;
+    border: none;
     height: 48px;
     border-radius: 8px;
     margin-top: 40px;
@@ -72,6 +73,9 @@ input{
 .login a{
     text-decoration: none;
     color: gray;
+}
+.login .btn a{
+    color: white;
 }
 .register button{
     display:flex;
