@@ -9,7 +9,7 @@ body {
     top: 0;
     display: flex;
     width: 100%;
-    position: fixed;
+    position: sticky;
     height: 60px;
     background-image: url(../image/nav_back_bg_fd2505e.jpg);
     transition: all .3s;
@@ -133,4 +133,89 @@ body {
     margin-top: 10px;
     margin-left: 10px;
     border-radius: 50%;
+}
+.section_con{
+    width: 1180px;
+    margin: 30px auto 0;
+    position: relative;
+    z-index: -11;
+
+}
+.game{
+    margin: 0 auto;
+    width: 100%;
+    height: 310px;
+    background: url(../image/right.jpg) no-repeat;
+    background-position: 0 174px;
+}
+.game-title{
+    float: left;
+    width: 54px;
+    height: 145px;
+    background: url(../image/index_z_9ac8591.webp);
+    background-position: -900px -532px;
+}
+.game-box{
+    float: right;
+    width: 1080px;
+    height: 209px;
+    /* background-color: green; */
+}
+.game-box>div{
+    position: relative;
+    float: left;
+    width: 340px;
+    height: 209px;
+    background-color: red;margin-left: 20px;
+    cursor: pointer;
+}
+.game-box span{
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 90px;
+    padding: 0 10px;
+    background: url(../image/stategy_tit_bg_3dfaee2.webp);
+    color: #000;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+.game-box a img{
+     cursor: pointer;
+}
+.game-box a img :hover{
+    transition: all 0.3s;
+    transform: scale(1.1);
+}
+.game-box>div span:first-of-type{
+    position: absolute;
+    top: 0;
+    left: 18px;
+
+}
+.game-box>div span:last-of-type{
+    position: absolute;
+    top: 22px;
+    left: 68px;
+}
+.theitem img{
+    margin-left: 300px;
+}
+.item-inner{
+    width: 1200px;
+    margin: 0 auto;
+    
+    position: relative;
+    height: 165px;
+}
+.item-inner .p-tit{
+    position: absolute;
+    font-size: 20px;
+    margin-left: 30px;
+    margin-bottom: 15px;
+}
+.item-inner .p-mess{
+    position: absolute;
+    margin-left: 30px;
+    margin-top: 30px;
 }

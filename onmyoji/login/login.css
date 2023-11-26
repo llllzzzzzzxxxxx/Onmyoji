@@ -22,6 +22,24 @@ video{
     border-radius: 25px;
     box-sizing: border-box;
 }
+.login2{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    margin-left: -200px;
+    margin-top: -200px;
+    background-color: whitesmoke;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    padding: 5px 40px;
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+.register{
+    cursor: pointer;
+}
 p{
     font-size: 42px;
     /* color: burlywood; */
@@ -30,8 +48,8 @@ p{
 input{
     background-color: whitesmoke;
     width: 100%;
-    height: 48px;
-    margin-bottom: 10px;
+    height: 38px;
+    margin-bottom: 6px;
     border: none;
     outline: none;
     font-size: 20px;
@@ -44,11 +62,11 @@ input{
     height: 48px;
     border-radius: 8px;
     margin-top: 40px;
+    right: 0%;
     font-size: 28px;
     font-weight: 600;
     color: white;
-}
-.btn:hover{
+}.btn:hover{
     background-color: #c29559;
 }
 .logo{
@@ -67,8 +85,12 @@ input{
 .login .back{
     position: absolute;
     right: 10%;
-    
-    
+}
+.login1{
+    position: absolute;
+    border: none;
+    left: 10%;
+    cursor: pointer;
 }
 .login a{
     text-decoration: none;

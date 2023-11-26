@@ -12,28 +12,92 @@
     </a>
     <video src="../image/a551d45027c5ab425d07c35ede467c81.mp4" autoplay loop muted></video>
     <form action="" class="login">
-        <p>Login</p>
-        <input type="text" id="inp1" placeholder="账号">
+        <p>Register</p>
+        <input type="text" id="inp1" placeholder="用户名">
+        <input type="text" id="email" placeholder="邮箱">
         <input type="password" id="inp2" placeholder="密码">
-        <button class="btn"><a href="../index.html">登录</a></button>
+        <button class="btn" id="bu">注册</button>
         <!-- <input type="submit" class="btn" value="登  录"> -->
-        <div class="back"><a href="../index.html">返回</a></div>
-        <div class="register"><button >注册</button></div>
+        <div class="back">返回</a></div>
+        <div class="login1">登录</div>
+    </form>
+    <form action="" class="login2">
+        <p>Login</p>
+        <input type="text" id="inp3" placeholder="用户名">
+        <input type="password" id="inp4" placeholder="密码">
+        <button class="btn" id="bu1">登录</button>
+        <!-- <input type="submit" class="btn" value="登  录"> -->
+        <!-- <div class="back">返回</a></div> -->
+        <div class="register">注册</div>
     </form>
     <script>
-        let btn = document.querySelector('button')
-        
-        btn.addEventListener("click",function(){
+        let btn = document.querySelector('#bu')
+        const myHeaders = new Headers()
+        const login1 = document.querySelector('.login1')
+        const login2 = document.querySelector('.login2')
+        const register =document.querySelector('.register')
+        login1.addEventListener("click",function(){
+            login2.style.display='block'
+        })
+        register.addEventListener("click",function(){
+            login2.style.display='none'
+        })
+        btn.addEventListener("click",function(event){
+            myHeaders.append("Content-Type", "application/json")
+            event.preventDefault();
             let inp1 = document.getElementById('inp1').value
             let inp2 = document.getElementById('inp2').value
-            console.log(inp1,inp2)
-            if(inp1.length<6||inp2.length<6){
-                alert("账号或密码长度少于6位")
+            let email = document.getElementById('email').value
+            console.log(inp1,inp2,email)
+            if(inp2.length<6){
+                alert("密码长度少于6位")
                 return
             }
             localStorage.setItem("user",inp1)
+            localStorage.setItem("email",email)
             localStorage.setItem("password",inp2)
-            
+            var raw = JSON.stringify({
+                "username": inp1,
+                "email":email,
+                "password": inp2,
+                    });
+                    console.log(raw)
+            var requestOptions = {
+            method: 'POST',
+            body: raw,
+            headers: myHeaders,
+            };
+            console.log(requestOptions)
+            // fetch("http://101.35.238.12:1337/api/auth/local/register", requestOptions)
+            // .then(response => response.text())
+            // .then(result => console.log(result))
+            // .catch(error => console.log('error', error));
+            // var resultObject = JSON.parse(result);
+            //     console.log(resultObject);
+            fetch("http://101.35.238.12:1337/api/auth/local/register", requestOptions)
+                .then(function(response) {
+                if(response.status === 200){
+                    alert("注册成功")
+                    return response.text();
+                    
+                }else if(response.status === 400){
+                    // console("注册失败")
+                    alert("注册失败")
+                    return response.text();
+                }else{
+                    throw new Error('Unexpect status code:'+response.status);
+                    alert("注册失败")
+                }
+                })
+                .then(function(result) {
+                  console.log(result);
+                  object1 = JSON.parse(result)
+                  console.log(object1.jwt)
+                })
+                .catch(function(error) {
+                   console.log('error', error);
+                });
+
         })
         // 获取数据
         let res1 = localStorage.getItem("user")
