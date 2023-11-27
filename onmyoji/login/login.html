@@ -17,8 +17,7 @@
         <input type="text" id="email" placeholder="邮箱">
         <input type="password" id="inp2" placeholder="密码">
         <button class="btn" id="bu">注册</button>
-        <!-- <input type="submit" class="btn" value="登  录"> -->
-        <div class="back">返回</a></div>
+        <div class="back"><a href="../index.html">返回官网</a></div>
         <div class="login1">登录</div>
     </form>
     <form action="" class="login2">
@@ -26,8 +25,6 @@
         <input type="text" id="inp3" placeholder="用户名">
         <input type="password" id="inp4" placeholder="密码">
         <button class="btn" id="bu1">登录</button>
-        <!-- <input type="submit" class="btn" value="登  录"> -->
-        <!-- <div class="back">返回</a></div> -->
         <div class="register">注册</div>
     </form>
     <script>
@@ -36,6 +33,7 @@
         const login1 = document.querySelector('.login1')
         const login2 = document.querySelector('.login2')
         const register =document.querySelector('.register')
+        let btn1 = document.querySelector('#bu1')
         login1.addEventListener("click",function(){
             login2.style.display='block'
         })
@@ -68,12 +66,6 @@
             headers: myHeaders,
             };
             console.log(requestOptions)
-            // fetch("http://101.35.238.12:1337/api/auth/local/register", requestOptions)
-            // .then(response => response.text())
-            // .then(result => console.log(result))
-            // .catch(error => console.log('error', error));
-            // var resultObject = JSON.parse(result);
-            //     console.log(resultObject);
             fetch("http://101.35.238.12:1337/api/auth/local/register", requestOptions)
                 .then(function(response) {
                 if(response.status === 200){
@@ -82,7 +74,7 @@
                     
                 }else if(response.status === 400){
                     // console("注册失败")
-                    alert("注册失败")
+                    alert("用户名或邮箱已被使用")
                     return response.text();
                 }else{
                     throw new Error('Unexpect status code:'+response.status);
@@ -99,14 +91,54 @@
                 });
 
         })
+        // 登录
+        btn1.addEventListener("click",function(event){
+            var myHeaders1 = new Headers();
+            myHeaders1.append("User-Agent", "Apifox/1.0.0 (https://apifox.com)");
+            myHeaders1.append("Content-Type", "application/json");
+            event.preventDefault();
+            let inp3 = document.getElementById('inp3').value
+            let inp4 = document.getElementById('inp4').value
+        var raw = JSON.stringify({
+            "identifier": inp3,
+            "password": inp4,
+            });
+
+            var requestOptions = {
+                method: 'POST',
+            headers: myHeaders1,
+            body: raw,
+            redirect: 'follow'
+            };
+
+            fetch("http://101.35.238.12:1337/api/auth/local", requestOptions)
+                // .then(response => response.text())
+                .then(function(response) {
+                if(response.status === 200){
+                    alert("登录成功")
+                    location.href= '../index.html'
+                    return response.text();
+                    
+                }else if(response.status === 400){
+                    // console("注册失败")
+                    alert("账号或密码错误")
+                    return response.text();
+                }else{
+                    throw new Error('Unexpect status code:'+response.status);
+                    alert("账号或密码错误")
+                }
+                })
+                .then(result => console.log(result))
+                .catch(error => console.log('error', error));
+        })
         // 获取数据
-        let res1 = localStorage.getItem("user")
-        let res2 = localStorage.getItem("password")
-        console.log(res1,res2)
-        if(res1!==""&&res2 !==""){
-            document.getElementById('inp1').value = res1
-            document.getElementById('inp2').value = res2
-        }
+        // let res1 = localStorage.getItem("user")
+        // let res2 = localStorage.getItem("password")
+        // console.log(res1,res2)
+        // if(res1!==""&&res2 !==""){
+        //     document.getElementById('inp1').value = res1
+        //     document.getElementById('inp2').value = res2
+        // }
     </script>
 </body>
 </html>
