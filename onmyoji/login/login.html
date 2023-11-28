@@ -115,6 +115,8 @@
                 // .then(response => response.text())
                 .then(function(response) {
                 if(response.status === 200){
+                    localStorage.setItem("res3",inp3)
+                    // console.log(res3)
                     alert("登录成功")
                     location.href= '../index.html'
                     return response.text();
@@ -132,13 +134,13 @@
                 .catch(error => console.log('error', error));
         })
         // 获取数据
-        // let res1 = localStorage.getItem("user")
-        // let res2 = localStorage.getItem("password")
-        // console.log(res1,res2)
-        // if(res1!==""&&res2 !==""){
-        //     document.getElementById('inp1').value = res1
-        //     document.getElementById('inp2').value = res2
-        // }
+        
+        let res2 = localStorage.getItem("password")
+        console.log(res1,res2)
+        if(res1!==""&&res2 !==""){
+            document.getElementById('inp1').value = res1
+            document.getElementById('inp2').value = res2
+        }
     </script>
 </body>
 </html>

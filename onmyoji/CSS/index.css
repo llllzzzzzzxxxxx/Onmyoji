@@ -58,6 +58,25 @@ body {
 .top li:hover>.top-list{
     display: block;
 }
+.userList{
+    display: none;
+    right: 10%;
+    position: absolute;
+    transition: all .3s;
+    margin-top: 60px;
+    border-radius: 10%;
+    line-height: 50px;
+    width: 70px;
+    height: 100px;
+    background-color: white;
+    color: black;
+}
+.userList li{
+    margin-left: 7px;
+}
+.upside img:hover>.userList{
+    display: block;
+}
 .top .wrapper .active span{
     line-height: 60px;
     margin-left: 20px;
