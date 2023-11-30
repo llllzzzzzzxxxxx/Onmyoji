@@ -16,7 +16,7 @@
         <div class="wrapper">
             <ul class="headerTop">
                 <li>
-                    <a href="#" class="active_first"><span>官网首页</span></a>
+                    <a href="./index.html" class="active_first"><span>官网首页</span></a>
                     <!-- <div class="top-list">
 
                     </div> -->
@@ -27,11 +27,11 @@
                         <a href="./game.html"><img class="img_later" src="../onmyoji/image/pic_2_f1ba243.jpg" alt="《阴阳师》手游11月15日维护公告"><i class="kindCon">秘闻副本</i></a>
                         <a href="./game.html"><img class="img_later" src="../onmyoji/image/pic_4_171aa2f.jpg" alt="《阴阳师》手游11月15日维护公告"><i class="kindCon">斗技阵容</i></a></div>
                 </li>
-                <li><a href="./game.html" class="active"><span>新闻资讯</span></a>
-                    <div class="top-list"><a href="./game.html"><img class="img_first" src="../onmyoji/image/QQ图片20231116115408(1).jpg" alt="《阴阳师》手游11月15日维护公告"><i class="kindCon">新闻</i></a>
-                        <a href="./game.html"><img class="img_later"  src="../onmyoji/image/QQ图片20231116115302(1).png" alt="《阴阳师》手游11月15日维护公告"><i class="kindCon">公告</i></a>
-                        <a href="./game.html"><img class="img_later" src="../onmyoji/image/QQ图片20231116115345(1).png" alt="《阴阳师》手游11月15日维护公告"><i class="kindCon">公告</i></a>
-                        <a href="./game.html"><img class="img_later" src="../onmyoji/image/QQ图片20231116115759(1).png" alt="《阴阳师》手游11月15日维护公告"><i class="kindCon">公告</i></a>
+                <li><a href="./news.html" class="active"><span>新闻资讯</span></a>
+                    <div class="top-list"><a href="./news.html"><img class="img_first" src="../onmyoji/image/QQ图片20231116115408(1).jpg" alt="《阴阳师》手游11月15日维护公告"><i class="kindCon">新闻</i></a>
+                        <a href="./news.html"><img class="img_later"  src="../onmyoji/image/QQ图片20231116115302(1).png" alt="《阴阳师》手游11月15日维护公告"><i class="kindCon">公告</i></a>
+                        <a href="./news.html"><img class="img_later" src="../onmyoji/image/QQ图片20231116115345(1).png" alt="《阴阳师》手游11月15日维护公告"><i class="kindCon">公告</i></a>
+                        <a href="./news.html"><img class="img_later" src="../onmyoji/image/QQ图片20231116115759(1).png" alt="《阴阳师》手游11月15日维护公告"><i class="kindCon">公告</i></a>
                     </div>
                 </li>
                 <li><a href="#" class="active"><span>式神录</span></a>
@@ -61,13 +61,13 @@
 
                 <div class="search"><input type="text" placeholder="请输入关键词">
                     <a href="#"></a></div>
-                    <div class="upside"><a href="../onmyoji/login/login.html"><p class="user">登录/注册</p>
-                        <img src="../onmyoji/image/006KbEKFly1hhen5n3tyoj3050050dg1.jpg" alt="">
+                    <div class="upside"><a class="upside_a" href="../onmyoji/login/login.html"><p class="user">登录/注册</p>
+                        <img src="../onmyoji/image/006KbEKFly1hhen5n3tyoj3050050dg1.jpg" alt=""></a>
                         <div class="userList">
                             <li class="li1">退出账号</li>
                             <li class="li2">登录中心</li>
                         </div>
-                    </a></div>
+                    </div>
             </ul>
             <!-- <div logo1><img src="../onmyoji/image/01727c5b03b4e0a801209a85f1e5a8.png@1280w_1l_2o_100sh.png" alt=""></div> -->
 
@@ -270,12 +270,13 @@
             user.innerHTML = localStorage.getItem("res3")
             // document.getElementById('user').value = Username
           }
+          li2.addEventListener('click',function(){
+            location.href='./login/login.html'
+        })
           li1.addEventListener('click',function(){
             localStorage.removeItem("res3");
           })
-          li2.addEventListener('click',function(){
-            location.href('./login/login.html');
-        })
+          
     upload.addEventListener('click',function(){
         if(tx.value.trim() !==''){
         //   item.style.display = 'block'

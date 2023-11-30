@@ -9,11 +9,10 @@ body {
 .top {
     top: 0;
     display: flex;
-    position: sticky;
+    position: relative;
     height: 60px;
     background-image: url(../image/nav_back_bg_fd2505e.jpg);
     transition: all .3s;
-    z-index: 999;
 }
 .top .wrapper ul {
     display: flex;
@@ -164,113 +163,50 @@ body {
     margin-left: 10px;
     border-radius: 50%;
 }
-.section_con{
-    width: 1180px;
-    margin: 30px auto 0;
-    position: relative;
-    z-index: -11;
-
-}
-.game{
-    margin: 0 auto;
+.parallax {
     width: 100%;
-    height: 310px;
-    background: url(../image/right.jpg) no-repeat;
-    background-position: 0 174px;
-}
-.game-title{
-    float: left;
-    width: 54px;
-    height: 145px;
-    background: url(../image/index_z_9ac8591.webp);
-    background-position: -900px -532px;
-}
-.game-box{
-    float: right;
-    width: 1080px;
-    height: 209px;
-    /* background-color: green; */
-}
-.game-box>div{
+    height: 80vh;
     position: relative;
-    float: left;
-    width: 340px;
-    height: 209px;
-    background-color: red;margin-left: 20px;
-    cursor: pointer;
-    transition: all 0.3s;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
 }
-.game-box>.pic img:hover{
-    transform: scale(1.1);
+.p1{
+    background-image: url(../image/df00b0de-bf58-4b76-b756-5a86fe106f19.jpg);
 }
-.game-box span{
-    position: absolute;
+.p2{
+    background-image: url(../image/3cfa2080-e999-418c-9ec0-9a222e841c54.jpg);
+}
+.p3{
+    background-image: url(../image/0fbaa485-6f2c-4e65-9c19-cff8d3116699.jpg);
+}
+.bg{
+    width: 100%;
+    height: 30vh;
+    background: url(../image/item-cur_e02445f.jpg) center top;
+    transition: ease-in-out .3s;
+}
+.content{
+    width: 960px;
+    height: 30vh;
+    margin:  auto;
+    text-align: justify;
+    flex-direction: column;
+}
+.title{
+    color: #444;
     display: block;
-    width: 40px;
-    height: 90px;
-    padding: 0 10px;
-    background: url(../image/stategy_tit_bg_3dfaee2.webp);
-    color: #000;
-    font-size: 14px;
-    transition: all 0.3s;
-}
-.game-box a img{
-     cursor: pointer;
-}
-.game-box a img :hover{
-    transition: all 0.3s;
-    transform: scale(1.1);
-}
-.game-box>div span:first-of-type{
-    position: absolute;
-    top: 0;
-    left: 18px;
+    margin-top: 20px;
+    font-size: 30px;
+    height: 30px;
+    line-height: 30px;
 
 }
-.game-box>div span:last-of-type{
-    position: absolute;
-    top: 22px;
-    left: 68px;
-}
-.theitem img{
-    margin-left: 300px;
-}
-.item{
-    height: 165px;
-    position: relative;
-}
-.item-inner{
-    width: 1200px;
-    margin: 0 auto;
-    
-    position: relative;
-    height: 165px;
-}
-.item-inner .p-tit{
-    position: absolute;
-    font-size: 20px;
-    margin-left: 200px;
-    margin-bottom: 15px;
+.pp{
+    display: flex;
     margin-top: 30px;
-}
-.item-inner .p-mess{
-    position: absolute;
-    width: 805px;
-    margin-left: 200px;
-    margin-top: 80px;
-}
-.item:hover{
-    background: url(../image/item-cur_e02445f.jpg) center top no-repeat;
-    transition: ease-in-out 0.3s;
-}
-.item span{
-    display: block;
-    text-align: center;
-    line-height: 32px;
-    top: 10px;
-    position: absolute;
-    width: 72px;
-    height: 32px;
-    background-image: url(../image/inpage_z_0650c12.webp);
-    background-position: -271px 0px;
+    color: grey;
+    font-size: 20px;
 }

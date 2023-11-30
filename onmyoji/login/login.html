@@ -70,6 +70,9 @@
                 .then(function(response) {
                 if(response.status === 200){
                     alert("注册成功")
+                    login2.style.display='block'
+                    localStorage.setItem("res1",inp1)
+                    document.getElementById('inp3').value = res1
                     return response.text();
                     
                 }else if(response.status === 400){

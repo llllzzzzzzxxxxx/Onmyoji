@@ -60,10 +60,11 @@ body {
 }
 .userList{
     display: none;
-    right: 10%;
+    right: 14%;
     position: absolute;
+    cursor: pointer;
     transition: all .3s;
-    margin-top: 60px;
+    margin-top: 20px;
     border-radius: 10%;
     line-height: 50px;
     width: 70px;
@@ -80,7 +81,6 @@ body {
 .top .wrapper .active span{
     line-height: 60px;
     margin-left: 20px;
-
 }
 .top .wrapper .active:hover {
     color: black;

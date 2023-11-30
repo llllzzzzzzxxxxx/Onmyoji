@@ -24,15 +24,16 @@
                         <a href="./game.html"><img class="img_later" src="../onmyoji/image/pic_2_f1ba243.jpg" alt="《阴阳师》手游11月15日维护公告"><i class="kindCon">秘闻副本</i></a>
                         <a href="./game.html"><img class="img_later" src="../onmyoji/image/pic_4_171aa2f.jpg" alt="《阴阳师》手游11月15日维护公告"><i class="kindCon">斗技阵容</i></a></div>
                 </li>
-                <li><a href="#" class="active"><span>新闻资讯</span></a>
-                    <div class="top-list"><a href="#"><img class="img_first" src="../onmyoji/image/QQ图片20231116115408(1).jpg" alt="《阴阳师》手游11月15日维护公告"><i class="kindCon">新闻</i></a>
-                        <a href="#"><img class="img_later"  src="../onmyoji/image/QQ图片20231116115302(1).png" alt="《阴阳师》手游11月15日维护公告"><i class="kindCon">公告</i></a>
-                        <a href="#"><img class="img_later" src="../onmyoji/image/QQ图片20231116115345(1).png" alt="《阴阳师》手游11月15日维护公告"><i class="kindCon">公告</i></a>
-                        <a href="#"><img class="img_later" src="../onmyoji/image/QQ图片20231116115759(1).png" alt="《阴阳师》手游11月15日维护公告"><i class="kindCon">公告</i></a>
+                <li><a href="./news.html" class="active"><span>新闻资讯</span></a>
+                    <div class="top-list"><a href="./news.html"><img class="img_first" src="../onmyoji/image/QQ图片20231116115408(1).jpg" alt="《阴阳师》手游11月15日维护公告"><i class="kindCon">新闻</i></a>
+                        <a href="./news.html"><img class="img_later"  src="../onmyoji/image/QQ图片20231116115302(1).png" alt="《阴阳师》手游11月15日维护公告"><i class="kindCon">公告</i></a>
+                        <a href="./news.html"><img class="img_later" src="../onmyoji/image/QQ图片20231116115345(1).png" alt="《阴阳师》手游11月15日维护公告"><i class="kindCon">公告</i></a>
+                        <a href="./news.html"><img class="img_later" src="../onmyoji/image/QQ图片20231116115759(1).png" alt="《阴阳师》手游11月15日维护公告"><i class="kindCon">公告</i></a>
                     </div>
                 </li>
                 <li><a href="#" class="active"><span>式神录</span></a>
-                    <div class="top-list"><a href="#"><img class="img_first" src="../onmyoji/image/ss_1_2fa7e81.jpg" alt="《阴阳师》手游11月15日维护公告"><i class="kindCon">联动</i></a>
+                    <div class="top-list">
+                        <a href="#"><img class="img_first" src="../onmyoji/image/ss_1_2fa7e81.jpg" alt="《阴阳师》手游11月15日维护公告"><i class="kindCon">联动</i></a>
                         <a href="#"><img class="img_later"  src="../onmyoji/image/ss_2_a4916b4.jpg" alt="《阴阳师》手游11月15日维护公告"><i class="kindCon">SP</i></a>
                         <a href="#"><img class="img_later" src="../onmyoji/image/ss_3_017abcd.jpg" alt="《阴阳师》手游11月15日维护公告"><i class="kindCon">SSR</i></a>
                         <a href="#"><img class="img_later" src="../onmyoji/image/ss_4_645f86e.jpg" alt="《阴阳师》手游11月15日维护公告"><i class="kindCon">SR</i></a></div>
@@ -57,11 +58,19 @@
 
                 <div class="search"><input type="text" placeholder="请输入关键词">
                     <a href="#"></a></div>
-                    <div class="upside"><a href="../onmyoji/login/login.html">登录/注册
+                    <div class="upside"><a href="../onmyoji/login/login.html"><p class="user">登录/注册</p>
                         <img src="../onmyoji/image/006KbEKFly1hhen5n3tyoj3050050dg1.jpg" alt="">
+                        <div class="userList">
+                            <li class="li1">退出账号</li>
+                            <li class="li2">登录中心</li>
+                        </div>
                     </a></div>
             </ul>
-            </div>
+            <!-- <div logo1><img src="../onmyoji/image/01727c5b03b4e0a801209a85f1e5a8.png@1280w_1l_2o_100sh.png" alt=""></div> -->
+
+            
+        </div>
+        
     </div>
           <div class="section_con">
             <div class="game">
@@ -194,7 +203,30 @@
             </div>
         </div>
     <script>
-        
+        const li1 = document.querySelector('.li1')
+    const li2 = document.querySelector('.li2')
+    const user = document.querySelector('.upside .user')
+            var Username = localStorage.getItem("res3")
+            console.log(Username)
+          if(Username !==null){
+            user.innerHTML = localStorage.getItem("res3")
+            // document.getElementById('user').value = Username
+          }
+          li1.addEventListener('click',function(){
+            localStorage.removeItem("res3");
+          })
+          li2.addEventListener('click',function(){
+            location.href='./login/login.html'
+        })
+        const upside = document.querySelector('.upside')
+    const userList = document.querySelector('.userList')
+    
+    upside.addEventListener('mouseenter',function(){
+        userList.style.display='block'
+    })
+    upside.addEventListener('mouseleave',function(){
+        userList.style.display='none'
+    })
     </script>
 </body>
 </html>
