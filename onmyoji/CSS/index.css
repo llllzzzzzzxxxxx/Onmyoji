@@ -27,12 +27,12 @@ body {
     position: sticky;
     height: 60px;
     background-image: url(../image/nav_back_bg_fd2505e.jpg);
-    transition: all .3s;
+    transition: all .3s; 
 }
 .top .wrapper ul {
     display: flex;
     color: white;
-}
+} 
 .top .wrapper .active {
     display: block;
     height: 60px;
