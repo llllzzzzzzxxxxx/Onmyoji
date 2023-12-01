@@ -9,10 +9,11 @@ body {
 .top {
     top: 0;
     display: flex;
-    position: relative;
+    position: sticky;
     height: 60px;
     background-image: url(../image/nav_back_bg_fd2505e.jpg);
     transition: all .3s;
+    z-index: 999;
 }
 .top .wrapper ul {
     display: flex;
@@ -174,13 +175,16 @@ body {
     background-attachment: fixed;
 }
 .p1{
-    background-image: url(../image/df00b0de-bf58-4b76-b756-5a86fe106f19.jpg);
+    background-image: url(../image/屏幕截图\ 2023-11-30\ 221446.png);
 }
 .p2{
     background-image: url(../image/3cfa2080-e999-418c-9ec0-9a222e841c54.jpg);
 }
 .p3{
     background-image: url(../image/0fbaa485-6f2c-4e65-9c19-cff8d3116699.jpg);
+}
+.p4{
+    background-image: url(../image/df00b0de-bf58-4b76-b756-5a86fe106f19.jpg);
 }
 .bg{
     width: 100%;

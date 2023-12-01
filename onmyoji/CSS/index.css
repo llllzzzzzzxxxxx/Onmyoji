@@ -24,7 +24,7 @@ body {
 .top {
     top: 0;
     display: flex;
-    position: relative;
+    position: sticky;
     height: 60px;
     background-image: url(../image/nav_back_bg_fd2505e.jpg);
     transition: all .3s;
