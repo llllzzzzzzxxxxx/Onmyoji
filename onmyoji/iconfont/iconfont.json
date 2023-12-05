@@ -6,6 +6,48 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "20853368",
+      "name": "注销",
+      "font_class": "zhuxiao",
+      "unicode": "e6ac",
+      "unicode_decimal": 59052
+    },
+    {
+      "icon_id": "999258",
+      "name": "太阳",
+      "font_class": "ai250",
+      "unicode": "e6ee",
+      "unicode_decimal": 59118
+    },
+    {
+      "icon_id": "1724899",
+      "name": "月亮",
+      "font_class": "yueliang",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "38282735",
+      "name": "004_菜单",
+      "font_class": "a-004_caidan",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "38282758",
+      "name": "004_团队",
+      "font_class": "a-004_tuandui",
+      "unicode": "e627",
+      "unicode_decimal": 58919
+    },
+    {
+      "icon_id": "38282766",
+      "name": "004_资讯",
+      "font_class": "a-004_zixun",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
       "icon_id": "8776842",
       "name": "search",
       "font_class": "icon-test",

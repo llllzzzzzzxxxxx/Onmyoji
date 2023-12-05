@@ -7,8 +7,72 @@
     <link rel="stylesheet" href="./CSS/game.css">
     <link rel="stylesheet" href="./login/login.html">
     <link rel="stylesheet" href="./CSS/base.css">
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+
 </head>
 <body>
+    <!-- 侧边导航栏  -->
+    <nav class="shell close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="./image/006KbEKFly1hhen5n3tyoj3050050dg1.jpg" alt="">
+                </span>
+                <div class="text logo-text">
+                    <span class="software">-onmyoji-</span>
+                </div>
+            </div>
+            <i class="iconfont toggle">&#xe659;</i>
+        </header>
+        <div class="menu-bar">
+            <div class="menu">
+                <li class="search-box">
+                    <i class="iconfont icon">&#xe63c</i>
+                    <input type="text" placeholder="搜索...">
+                </li>
+                <ul>
+                    <li class="nav-link">
+                        <a href="./index.html">
+                            <i class="iconfont icon">&#xe621;</i>
+                            <span class="text nac-text">官网首页</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="./game.html">
+                            <i class="iconfont icon">&#xe616;</i>
+                            <span class="text nac-text">游戏攻略</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="./news.html">
+                            <i class="iconfont icon">&#xe628;</i>
+                            <span class="text nac-text">新闻资讯</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="iconfont icon">&#xe627;</i>
+                            <span class="text nac-text">大社区</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <li class="li3">
+                    <a href="#">
+                        <i class="iconfont icon ">&#xe6ac;</i>
+                        <span class="text nac-text">退出登录</span>
+                    </a>
+                </li>
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class="iconfont icon-rijian icon">&#xe6ee;</i>
+                        <i class="iconfont icon-yejian icon">&#xe611;</i>
+                    </div>
+                </li>
+            </div>
+        </div>
+    </nav>
     <div class="top">
         <div class="wrapper">
             <ul class="headerTop">
@@ -227,6 +291,30 @@
     upside.addEventListener('mouseleave',function(){
         userList.style.display='none'
     })
+    // 侧边导航栏
+    const body = document.querySelector('body'),
+            shell = body.querySelector('nav'),
+            toggle = body.querySelector(".toggle"),
+            searchBtn = body.querySelector(".search-box"),
+            modeSwitch = body.querySelector(".toggle-switch"),
+            li3 =  body.querySelector('.li3'),
+            image_text = body.querySelector('.image-text'),
+            modeText = body.querySelector(".mode-text");
+        // 点击toggle时触发的事件
+        toggle.addEventListener("click", () => {
+            shell.classList.toggle("close");
+        })
+        searchBtn.addEventListener("click", () => {
+            shell.classList.remove("close");
+        })
+        li3.addEventListener('click', function () {
+            // console.log("4575676")
+            localStorage.removeItem("res3");
+            location.href = './index.html'
+        })
+        image_text.addEventListener('click',function(){
+            location.href = './login/login.html'
+        })
     </script>
 </body>
 </html>
