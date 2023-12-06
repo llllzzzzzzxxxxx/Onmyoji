@@ -4,7 +4,6 @@
 html {
     scroll-behavior: smooth;
 }
-
 :root {
     --body-color: #E4E9F7;
     --shell-color: #FFF;
@@ -29,7 +28,8 @@ html {
     height: 100%;
     width: 250px;
     padding: 10px 14px;
-    background: var(--shell-color);
+    background: url(../image/bg_42f248c.jpg);
+    background-position: -470px -100px;
     transition: all 0.3s ease;
     z-index: 1000;
 }
@@ -63,6 +63,7 @@ html {
 }
 .text {
     font: 500 17px;
+    margin-left: 50px;
     white-space: nowrap;
     opacity: 1;
 }
@@ -141,8 +142,9 @@ header {
 }
 
 li.search-box input {
-    height: 100%;
+    height: 50%;
     width: 100%;
+    margin-left: 40px;
     outline: none;
     border: none;
     background-color: var(--primary-color-light);

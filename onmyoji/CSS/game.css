@@ -28,8 +28,9 @@ body {
     left: 0;
     height: 100%;
     width: 250px;
+    background: url(../image/bg_42f248c.jpg);
+    background-position: -470px -100px;
     padding: 10px 14px;
-    background: var(--shell-color);
     transition: all 0.3s ease;
     z-index: 1000;
 }
@@ -65,6 +66,7 @@ body {
 
 .text {
     font: 500 17px;
+    margin-left: 50px;
     white-space: nowrap;
     opacity: 1;
 }
@@ -147,6 +149,7 @@ li.search-box input {
     width: 100%;
     outline: none;
     border: none;
+    margin-left: 40px;
     background-color: var(--primary-color-light);
     color: var(--text-color);
     font-size: 17px;

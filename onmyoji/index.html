@@ -18,7 +18,7 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="./image/006KbEKFly1hhen5n3tyoj3050050dg1.jpg" alt="">
+                    <img src="./image/QQ图片20231128220913.jpg" alt="">
                 </span>
                 <div class="text logo-text">
                     <span class="software">-onmyoji-</span>
@@ -206,28 +206,28 @@
                     <img src="" alt="">
                     <div class="bottom">
                         <ul>
-                            <li><a href="#">
+                            <li><a href="./game.html">
                                     <div class="pic"><img src="../onmyoji\image\QQ图片21.png" alt="祈舞唤神 活动攻略"></div>
                                     <div class="text">
                                         <h4>祈舞唤神 活动攻略</h4>
                                         <p><span>活动攻略</span> · <i>1125</i>人次观看</p>
                                     </div>
                                 </a></li>
-                            <li><a href="#">
+                            <li><a href="./game.html">
                                     <div class="pic"><img src="../onmyoji\image\QQ图片22.png" alt="孔雀明王 御灵入阵"></div>
                                     <div class="text">
                                         <h4>孔雀明王 御灵入阵</h4>
                                         <p><span>式神御魂</span> · <i>2335</i>人次观看</p>
                                     </div>
                                 </a></li>
-                            <li><a href="#">
+                            <li><a href="./game.html">
                                     <div class="pic"><img src="../onmyoji\image\QQ图片23.png" alt="宴场维和 活动阵容"></div>
                                     <div class="text">
                                         <h4>宴场维和 活动阵容</h4>
                                         <p><span>活动阵容</span> · <i>2367</i>人次观看</p>
                                     </div>
                                 </a></li>
-                            <li><a href="#">
+                            <li><a href="./game.html">
                                     <div class="pic"><img src="../onmyoji\image\QQ图片24.png" alt="至情为本 幻影寻真"></div>
                                     <div class="text">
                                         <h4>至情为本 幻影寻真</h4>
@@ -296,7 +296,6 @@
         const item = document.querySelector('.item')
         const text1 = document.querySelector('.text1')
         const upload = document.querySelector('.upload')
-        const arr = []
         const thelist = document.querySelector('.thelist')
         const sliderData = [
             { url: '../onmyoji/image/1920x1080（1）.jpg' },
@@ -320,6 +319,7 @@
         tx.addEventListener('input', function () {
             total.innerHTML = `${tx.value.length}/200字`
         })
+        //获取时间
         const Time = document.querySelector('.time')
         function getMyDate() {
             const date = new Date()
@@ -329,15 +329,17 @@
             h = h < 10 ? '0' + h : h
             m = m < 10 ? '0' + m : m
             s = s < 10 ? '0' + s : s
-
             return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${h}:${m}:${s}`
         }
         Time.innerHTML = getMyDate()
+        // const arr = []
+        var arr = JSON.parse(localStorage.getItem("a")) || []
         tx.addEventListener('keyup', function (e) {
             if (e.key === 'Enter') {
                 if (tx.value.trim() !== '') {
                     //   item.style.display = 'block'
                     //   text1.innerHTML = tx.value
+                    localStorage.setItem("a", JSON.stringify(arr))                    
                     const obj = {
                         stuId: arr.length + 1,
                         text1: tx.value,
@@ -380,15 +382,12 @@
 
         upload.addEventListener('click', function () {
             if (tx.value.trim() !== '') {
-                //   item.style.display = 'block'
-                //   text1.innerHTML = tx.value
                 const obj = {
                     stuId: arr.length + 1,
                     text1: tx.value,
                     Time: getMyDate()
                 }
                 arr.push(obj)
-                //   console.log('1111111111')
                 render()
             }
             tx.value = ''
@@ -423,7 +422,7 @@
                 arr.splice(e.target.dataset.id, 1)
                 render()
             }
-        }) 
+        })
         let i = 0
         setInterval(function () {
             i++
@@ -493,7 +492,7 @@
             toggle = body.querySelector(".toggle"),
             searchBtn = body.querySelector(".search-box"),
             modeSwitch = body.querySelector(".toggle-switch"),
-            li3 =  body.querySelector('.li3'),
+            li3 = body.querySelector('.li3'),
             image_text = body.querySelector('.image-text'),
             modeText = body.querySelector(".mode-text");
         // 点击toggle时触发的事件
@@ -508,7 +507,7 @@
             localStorage.removeItem("res3");
             location.href = './index.html'
         })
-        image_text.addEventListener('click',function(){
+        image_text.addEventListener('click', function () {
             location.href = './login/login.html'
         })
     </script>
