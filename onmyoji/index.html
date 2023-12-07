@@ -268,10 +268,10 @@
     <div class="thelist">
         <div>
             <div class="list">
-                <div class="item" style="display: none;">
+                <div class="item">
                     <i class="avatar"></i>
                     <div class="info">
-                        <p class="name">游客</p>
+                        <!-- <p class="name">游客</p> -->
                         <p class="text1">1</p>
                         <p class="time"></p>
                         <a href="javascript:" data-id="">删除</a>
@@ -339,13 +339,15 @@
                 if (tx.value.trim() !== '') {
                     //   item.style.display = 'block'
                     //   text1.innerHTML = tx.value
-                    localStorage.setItem("a", JSON.stringify(arr))                    
+                                        
                     const obj = {
                         stuId: arr.length + 1,
+                        UserName:localStorage.getItem("res3"),
                         text1: tx.value,
                         Time: getMyDate()
                     }
                     arr.push(obj)
+                    localStorage.setItem("a", JSON.stringify(arr))
                     //   console.log(obj)
                     render()
                 }
@@ -356,12 +358,12 @@
         const upside = document.querySelector('.upside')
         const userList = document.querySelector('.userList')
 
-        upside.addEventListener('mouseenter', function () {
-            userList.style.display = 'block'
-        })
-        upside.addEventListener('mouseleave', function () {
-            userList.style.display = 'none'
-        })
+        // upside.addEventListener('mouseenter', function () {
+        //     userList.style.display = 'block'
+        // })
+        // upside.addEventListener('mouseleave', function () {
+        //     userList.style.display = 'none'
+        // })
         // 获取用户名
         const li1 = document.querySelector('.li1')
         const li2 = document.querySelector('.li2')
@@ -379,11 +381,13 @@
             localStorage.removeItem("res3");
             location.href = './index.html'
         })
-
+        render()
+        console.log(Username)
         upload.addEventListener('click', function () {
             if (tx.value.trim() !== '') {
                 const obj = {
                     stuId: arr.length + 1,
+                    UserName:localStorage.getItem("res3"),
                     text1: tx.value,
                     Time: getMyDate()
                 }
@@ -402,7 +406,7 @@
                 <div class="item">
                     <i class="avatar"></i>
                     <div class="info">
-                      <p class="name">${Username}</p>
+                         <p class="name"> ${arr[i].UserName}</p>
                       <p class="text1">${arr[i].text1}</p>
                       <p class="time">${arr[i].Time}</p>
                       <a href="javascript:" data-id="${i}">删除</a>
@@ -410,19 +414,21 @@
                   </div>
               </div>
             `
-                console.log(arr.Time)
+                console.log(arr[i])
                 thelist.appendChild(div)
             }
         }
-        console.log('111111111')
-        console.log(JSON.stringify())
+        // console.log('111111111')
+        // console.log(JSON.stringify())
         // 删除事件 
         thelist.addEventListener('click', function (e) {
             if (e.target.tagName === 'A') {
+                localStorage.removeItem("a");
                 arr.splice(e.target.dataset.id, 1)
                 render()
             }
         })
+        // 
         let i = 0
         setInterval(function () {
             i++
