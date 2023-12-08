@@ -28,8 +28,8 @@ html {
     height: 100%;
     width: 250px;
     padding: 10px 14px;
-    background: url(../image/bg_42f248c.jpg);
-    background-position: -470px -100px;
+    background: url(../image/bg_42f248c.jpg) no-repeat;
+    background-position: -472px;
     transition: all 0.3s ease;
     z-index: 1000;
 }
@@ -129,7 +129,7 @@ header {
 }
 
 .toggle {
-    font-size: 20px;
+    font-size: 30px;
     color: #ccc;
 }
 
@@ -272,7 +272,7 @@ body {
 
 .slider-wrapper {
     position: absolute;
-    left: 0;
+    left: 70px;
     min-width: 100%;
     min-height: 100%;
     width: auto;
@@ -639,6 +639,7 @@ body {
 .container {
     width: 1180px;
     margin: 43px auto 0;
+    position: relative;
     /* color: red; */
 }
 
@@ -700,7 +701,41 @@ body {
     right: -140px;
     z-index: -10;
 }
-
+._left{
+    display: flex;
+    position: absolute;
+    background-color: #bd9f69;
+    width: 58px;
+    height: 58px;
+    margin-top: -250px;
+    margin-left: 0;
+    border-radius: 20%;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+}
+._right{
+    display: flex;
+    position: absolute;
+    background-color: #bd9f69;
+    width: 58px;
+    height: 58px;
+    margin-top: -250px;
+    margin-left: 98%;
+    border-radius: 20%;
+    cursor: pointer;
+    transition: all  ease-in-out 0.3s;
+}
+._left:hover{
+    background-color:#c78917;
+}
+._right:hover{
+    background-color:#c78917;
+}
+._left img,
+._right img{
+    margin-top: 23px;
+    margin-left: 9px;
+}
 /* 讨论区 */
 .talk {
 

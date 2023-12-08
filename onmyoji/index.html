@@ -67,10 +67,10 @@
                     </a>
                 </li>
                 <li class="mode">
-                    <div class="sun-moon">
+                    <!-- <div class="sun-moon">
                         <i class="iconfont icon-rijian icon">&#xe6ee;</i>
                         <i class="iconfont icon-yejian icon">&#xe611;</i>
-                    </div>
+                    </div> -->
                 </li>
             </div>
         </div>
@@ -244,16 +244,47 @@
         <div class="world">
             <div class="world-title"></div>
             <div class="world-box">
-                <div class="world-img">
+                <div class="world-img" style="display:block">
+                    <a href="#">
+                        <img src="./image/tz1.webp" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="./image/tz2.webp" alt="">
+                    </a>
+                </div>
+                <div class="world-img" style="display:none;">
+                    <a href="#">
+                        <img src="./image/gtw1.webp" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="./image/gtw2.webp" alt="">
+                    </a>
+                </div>
+                <div class="world-img" style="display: none;">
+                    <a href="#">
+                        <img src="./image/wryx1.webp" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="./image/wryx2.webp" alt="">
+                    </a>
+                </div>
+                <div class="world-img" style="display: none">
                     <a href="#">
                         <img src="../onmyoji/image/559.webp" alt="">
                     </a>
                     <a href="#">
                         <img src="../onmyoji/image/559 (1).webp" alt="">
                     </a>
+
                 </div>
             </div>
         </div>
+        <span class="_left">
+            <i><img src="./image/left1.webp" alt=""></i>
+        </span>
+        <span class="_right">
+            <i><img src="./image/right1.webp" alt=""></i>
+        </span>
     </div>
     <!-- 讨论区 -->
     <div class="talk">讨 论 区</div>
@@ -299,7 +330,7 @@
         const thelist = document.querySelector('.thelist')
         const sliderData = [
             { url: '../onmyoji/image/1920x1080（1）.jpg' },
-            { url: '../onmyoji/image/QQ图片20231116203418.png' },
+            { url: '../onmyoji/image/2c0e8f68-0359-4493-b7df-0e6308b7f773.jpg' },
             { url: '../onmyoji/image/20190505222354_ytkst(1).png' },
             { url: '../onmyoji/image/1920x1080.jpg' },
             { url: '../onmyoji/image/1920x1080 (3).jpg' },
@@ -339,15 +370,15 @@
                 if (tx.value.trim() !== '') {
                     //   item.style.display = 'block'
                     //   text1.innerHTML = tx.value
-                                        
+
                     const obj = {
                         stuId: arr.length + 1,
-                        UserName:localStorage.getItem("res3"),
+                        UserName: localStorage.getItem("res3"),
                         text1: tx.value,
                         Time: getMyDate()
                     }
                     arr.push(obj)
-                    localStorage.setItem("a", JSON.stringify(arr))
+                    localStorage.setItem("a", JSON.stringify(arr))//将数组存入localstorage
                     //   console.log(obj)
                     render()
                 }
@@ -387,7 +418,7 @@
             if (tx.value.trim() !== '') {
                 const obj = {
                     stuId: arr.length + 1,
-                    UserName:localStorage.getItem("res3"),
+                    UserName: localStorage.getItem("res3"),
                     text1: tx.value,
                     Time: getMyDate()
                 }
@@ -414,7 +445,7 @@
                   </div>
               </div>
             `
-                console.log(arr[i])
+                // console.log(arr[i])
                 thelist.appendChild(div)
             }
         }
@@ -439,9 +470,34 @@
             img.src = sliderData[i].url
             document.querySelector(`.slider-indicator li:nth-child(${i + 1})`)
         }, 5000)
+        // 角色轮播图
+        let j =1
+        const _left = document.querySelector('._left')
+        const _right = document.querySelector('._right')
+        _left.addEventListener('click',function(){
+            j--
+            if(j<1){
+                j=4
+                document,querySelector(`.world-box div:nth-child(${1})`).style.display='none'
+                document,querySelector(`.world-box div:nth-child(${j})`).style.display='block'
+            }else{
+                document,querySelector(`.world-box div:nth-child(${j+1})`).style.display='none'
+                document,querySelector(`.world-box div:nth-child(${j})`).style.display='block'
+            }
+        })
+        _right.addEventListener('click',function(){
+            j++
+            if(j>4){
+                j=1
+                document.querySelector(`.world-box div:nth-child(${4})`).style.display='none'
+                document.querySelector(`.world-box div:nth-child(${j})`).style.display='block'
+            }else{
+                document.querySelector(`.world-box div:nth-child(${j-1})`).style.display='none'
+                document.querySelector(`.world-box div:nth-child(${j})`).style.display='block'
+            }
+        })
         // 电梯
         // 第一个大模块 
-
         const elevator = document.querySelector('.xtx-elevator')
         window.addEventListener('scroll', function () {
             const n = document.documentElement.scrollTop
