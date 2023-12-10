@@ -362,7 +362,7 @@
             s = s < 10 ? '0' + s : s
             return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${h}:${m}:${s}`
         }
-        Time.innerHTML = getMyDate()
+        Time.innerHTML = getMyDate() 
         // const arr = []
         var arr = JSON.parse(localStorage.getItem("a")) || []
         tx.addEventListener('keyup', function (e) {
