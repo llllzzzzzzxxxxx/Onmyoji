@@ -478,11 +478,11 @@
             j--
             if(j<1){
                 j=4
-                document,querySelector(`.world-box div:nth-child(${1})`).style.display='none'
-                document,querySelector(`.world-box div:nth-child(${j})`).style.display='block'
+                document.querySelector(`.world-box div:nth-child(${1})`).style.display='none'
+                document.querySelector(`.world-box div:nth-child(${j})`).style.display='block'
             }else{
-                document,querySelector(`.world-box div:nth-child(${j+1})`).style.display='none'
-                document,querySelector(`.world-box div:nth-child(${j})`).style.display='block'
+                document.querySelector(`.world-box div:nth-child(${j+1})`).style.display='none'
+                document.querySelector(`.world-box div:nth-child(${j})`).style.display='block'
             }
         })
         _right.addEventListener('click',function(){

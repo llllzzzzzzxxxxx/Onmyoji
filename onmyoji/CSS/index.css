@@ -287,6 +287,7 @@ body {
     height: 60px;
     background-image: url(../image/nav_back_bg_fd2505e.jpg);
     transition: all .3s;
+    z-index: 99;
 }
 
 .top .wrapper ul {
@@ -655,6 +656,8 @@ body {
     height: 145px;
     background: url(../image/index_z_9ac8591.webp);
     background-position: -835px -532px;
+    z-index: -10;
+    
 }
 
 .world-box {
